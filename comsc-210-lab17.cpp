@@ -10,15 +10,37 @@ struct Node {
 };
 
 void output(Node *);
+void prependNode(Node *&);
+void appendNode(Node *&);
+void deleteNode(Node *&);
+void insertNode(Node *&);
+void deleteList(Node *&);
+
 
 int main() {
     Node *head = nullptr;
     int count = 0;
+    int input = 0;
 
     // create a linked list of size SIZE with random numbers 0-99
     for (int i = 0; i < SIZE; i++) {
         int tmp_val = rand() % 100;
         Node *newVal = new Node;
+    }
+
+    while(input != -1){
+        cout << "What would you like to do?" << endl;
+        cout << "1. Prepend a Node" << endl;
+        cout << "2. Append a Node " << endl;
+        cout << "3. Delete a Node" << endl;
+        cout << "4. Insert a Node" << endl;
+        cout << "5. Delete LinkedList" << endl;
+        cout << "Enter -1 to exit!" << endl;
+    }
+
+}
+
+void prependNode(Node *&){
         
         // adds node at head
         if (!head) {
@@ -31,10 +53,10 @@ int main() {
             newVal->value = tmp_val;
             head = newVal;
         }
-    }
     output(head);
+}
 
-    // deleting a node
+void deleteNode(){
     cout << "Which node to delete? " << endl;
     output(head);
     int entry;
@@ -62,7 +84,9 @@ int main() {
         current = nullptr;
     }
     output(head);
+}
 
+void insertNode(){
     // insert a node
     cout << "After which node to insert 10000? " << endl;
     count = 1;
@@ -81,6 +105,7 @@ int main() {
         prev = current;
         current = current->next;
     }
+
 
     // at this point, insert a node between prev and current
     Node *newnode = new Node;
@@ -104,9 +129,8 @@ int main() {
     }
     head = nullptr;
     output(head);
-
-    return 0;
 }
+
 
 void output(Node *hd) {
     if (!hd) {
