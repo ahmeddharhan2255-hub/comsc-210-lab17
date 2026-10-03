@@ -26,6 +26,18 @@ int main() {
     for (int i = 0; i < SIZE; i++) {
         int tmp_val = rand() % 100;
         Node *newVal = new Node;
+
+        if (!head){
+            head = newVal;
+            newVal->next = nullptr;
+            newVal->value = tmp_val;
+        }
+        else{
+            newVal->next = head;
+            newVal->value = tmp_val;
+            head = newVal;
+        }
+        output(head);
     }
 
     while(input != -1){
@@ -53,9 +65,9 @@ int main() {
         }
         if (input == 5){
             deleteList(head);
-            
         }
         if (input == -1){
+            cout << "Thank You!" << endl;
             break;
         }
     }
@@ -64,6 +76,27 @@ int main() {
 
 void prependNode(Node *&head){
         int tmp_val;
+
+        cout << "Enter Value" << endl;
+        cin >> tmp_val;
+
+        Node * newVal = new Node;
+        // adds node at head
+        if (!head) {
+            head = newVal;
+            newVal->next = nullptr;
+            newVal->value = tmp_val;
+        }
+        else {
+            newVal->next = head;
+            newVal->value = tmp_val;
+            head = newVal;
+        }
+    output(head);
+}
+
+void appendNode(Node *&head){
+            int tmp_val;
 
         cout << "Enter Value" << endl;
         cin >> tmp_val;
