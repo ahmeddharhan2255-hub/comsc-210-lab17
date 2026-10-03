@@ -40,8 +40,13 @@ int main() {
 
 }
 
-void prependNode(Node *&){
-        
+void prependNode(Node *&head){
+        int tmp_val;
+
+        cout << "Enter Value" << endl;
+        cin >> tmp_val;
+
+        Node * newVal = new Node;
         // adds node at head
         if (!head) {
             head = newVal;
@@ -56,7 +61,7 @@ void prependNode(Node *&){
     output(head);
 }
 
-void deleteNode(){
+void deleteNode(Node *&head){
     cout << "Which node to delete? " << endl;
     output(head);
     int entry;
