@@ -22,7 +22,7 @@ int main() {
     int count = 0;
     int input = 0;
 
-    // create a linked list of size SIZE with random numbers 0-99
+    // create a linked (list of size SIZE with random numbers 0-99
     for (int i = 0; i < SIZE; i++) {
         int tmp_val = rand() % 100;
         Node *newVal = new Node;
@@ -40,22 +40,23 @@ int main() {
         cin >> input;
 
         if (input == 1){
-
+            prependNode(head);
         }
         if (input == 2){
-            
+            appendNode(head);
         }
         if (input == 3){
-            
+            deleteNode(head);
         }
         if (input == 4){
-            
+            insertNode(head);
         }
         if (input == 5){
+            deleteList(head);
             
         }
-        if (input == 6){
-            
+        if (input == -1){
+            break;
         }
     }
 
@@ -152,7 +153,7 @@ void insertNode(Node *&head, int count){
 
 void deleteList(Node*&head){
     // deleting the linked list
-    current = head;
+    Node * current = head;
     while (current) {
         head = current->next;
         delete current;
