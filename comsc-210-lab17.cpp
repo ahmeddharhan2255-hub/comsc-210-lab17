@@ -36,6 +36,27 @@ int main() {
         cout << "4. Insert a Node" << endl;
         cout << "5. Delete LinkedList" << endl;
         cout << "Enter -1 to exit!" << endl;
+
+        cin >> input;
+
+        if (input == 1){
+
+        }
+        if (input == 2){
+            
+        }
+        if (input == 3){
+            
+        }
+        if (input == 4){
+            
+        }
+        if (input == 5){
+            
+        }
+        if (input == 6){
+            
+        }
     }
 
 }
@@ -91,11 +112,14 @@ void deleteNode(Node *&head){
     output(head);
 }
 
-void insertNode(){
+void insertNode(Node *&head, int count){
+
+    int entry;
     // insert a node
     cout << "After which node to insert 10000? " << endl;
     count = 1;
-    current = head;
+    Node *current = head;
+    Node *prev;
     while (current) {
         cout << "[" << count++ << "] " << current->value << endl;
         current = current->next;
@@ -124,7 +148,9 @@ void insertNode(){
         prev->next = newnode;
     }
     output(head);
+}
 
+void deleteList(Node*&head){
     // deleting the linked list
     current = head;
     while (current) {
@@ -135,7 +161,6 @@ void insertNode(){
     head = nullptr;
     output(head);
 }
-
 
 void output(Node *hd) {
     if (!hd) {
