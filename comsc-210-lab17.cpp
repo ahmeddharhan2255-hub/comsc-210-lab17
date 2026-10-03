@@ -96,21 +96,14 @@ void prependNode(Node *&head){
 }
 
 void appendNode(Node *&head){
-            int tmp_val;
+        int tmp_val;
 
         cout << "Enter Value" << endl;
         cin >> tmp_val;
 
         Node * newVal = new Node;
-        // adds node at head
-        if (!head) {
-            head = newVal;
-            newVal->next = nullptr;
-            newVal->value = tmp_val;
-        }
-        else {
-            newVal->next = head;
-            newVal->value = tmp_val;
+
+        if (!head){
             head = newVal;
         }
     output(head);
