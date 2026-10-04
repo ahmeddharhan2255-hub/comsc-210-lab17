@@ -13,7 +13,7 @@ void output(Node *);
 void prependNode(Node *&);
 void appendNode(Node *&);
 void deleteNode(Node *&);
-void insertNode(Node *&);
+void insertNode(Node *&, int count);
 void deleteList(Node *&);
 
 
@@ -61,7 +61,7 @@ int main() {
             deleteNode(head);
         }
         if (input == 4){
-            insertNode(head);
+            insertNode(head, count);
         }
         if (input == 5){
             deleteList(head);
@@ -106,11 +106,17 @@ void appendNode(Node *&head){
         newVal->value = tmp_val;
         newVal->next = nullptr;
 
-        while(current->next != nullptr){
-            current = current->next
+        if(!head){
+           head = newVal;
+        }
+        else{
+
+            while(current->next != nullptr){
+                current = current->next;
         }
 
-        current->next = new
+            current->next = newVal;
+    }
 
     output(head);
 }
