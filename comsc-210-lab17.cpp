@@ -9,6 +9,7 @@ struct Node {
     Node *next;
 };
 
+//Function Prototypes
 void output(Node *);
 void prependNode(Node *&);
 void appendNode(Node *&);
@@ -66,9 +67,15 @@ int main() {
         if (input == 5){
             deleteList(head);
         }
+        if (input == 6){
+            output(head);
+        }
         if (input == -1){
             cout << "Thank You!" << endl;
             break;
+        }
+        else{
+            cout << "Invalid input! Try one of the listed options! << endl;"
         }
     }
 
