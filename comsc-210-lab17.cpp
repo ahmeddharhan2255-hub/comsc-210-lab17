@@ -1,4 +1,8 @@
 //COMSC-210 | Lab 17 | Ahmad Dharhan
+//I selected pass by reference because I'm familiar with
+//void functions and passing by reference. I know how to
+//pass by value but returning a new pointer every function
+//felt unnecessary when I could edit the main function
 #include <iostream>
 using namespace std;
 
@@ -75,7 +79,7 @@ int main() {
             break;
         }
         else{
-            cout << "Invalid input! Try one of the listed options! << endl;"
+            cout << "Invalid input! Try one of the listed options!" << endl;
         }
     }
 
