@@ -102,10 +102,16 @@ void appendNode(Node *&head){
         cin >> tmp_val;
 
         Node * newVal = new Node;
+        Node * current = head;
+        newVal->value = tmp_val;
+        newVal->next = nullptr;
 
-        if (!head){
-            head = newVal;
+        while(current->next != nullptr){
+            current = current->next
         }
+
+        current->next = new
+
     output(head);
 }
 
